@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Κατερίνα Τεννέ | Ψυχολόγος & Κλινική Υπνοθεραπεύτρια στο Γαλάτσι</title>
+    <meta name="description" content="Η Κατερίνα Τεννέ είναι Ψυχολόγος, Γνωσιακή Συμπεριφορική Κλινική Υπνοθεραπεύτρια και Ψυχοθεραπεύτρια στο Γαλάτσι. Αντιμετώπιση άγχους, κατάθλιψης, διακοπή καπνίσματος.">
+    <meta name="keywords" content="Ψυχολόγος Γαλάτσι, Κλινική Υπνοθεραπεία, Κατερίνα Τεννέ, Γνωσιακή Συμπεριφορική, Διακοπή Καπνίσματος, Διαχείριση Άγχους">
+    <meta name="author" content="Advon Media">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://github.com/agelmet/TENNE/blob/main/olog.jpg?raw=true" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            navy: '#0f172a',
+                            slate: '#334155',
+                            soft: '#f8fafc',
+                            taupe: '#8b8c89',
+                            silver: '#e2e8f0',
+                            accent: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    boxShadow: {
+                        'elegant': '0 10px 40px -10px rgba(15, 23, 42, 0.1)',
+                        'float': '0 20px 50px -10px rgba(15, 23, 42, 0.2)',
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'slow-zoom': 'slowZoom 20s ease-out both',
+                        'marquee': 'marquee 80s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1.1)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #8b8c89; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .no-accents { text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .marquee-container {
+            display: flex;
+            width: fit-content;
+        }
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+
+        #lightbox {
+            opacity: 0; pointer-events: none; transition: opacity 0.5s ease;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox img { transform: scale(0.95); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        #lightbox.active img { transform: scale(1); }
+
+        .service-card {
+            transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.1);
+        }
+
+        .img-masonry {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-luxury-soft text-luxury-navy font-sans antialiased overflow-x-hidden selection:bg-luxury-taupe selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-500 py-6" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center px-8 py-4 rounded-2xl transition-all duration-500" id="nav-inner">
+                <a href="#" class="flex items-center group z-50">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/olog.jpg?raw=true" alt="Κατερίνα Τεννέ Logo" class="h-20 w-auto object-contain transition-transform duration-700 group-hover:scale-105 shadow-2xl rounded-lg">
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="#about" class="text-sm font-medium tracking-wide text-white hover:text-luxury-taupe transition-colors uppercase">Η Ειδικός</a>
+                    <a href="#services" class="text-sm font-medium tracking-wide text-white hover:text-luxury-taupe transition-colors uppercase">Υπηρεσίες</a>
+                    <a href="#space" class="text-sm font-medium tracking-wide text-white hover:text-luxury-taupe transition-colors uppercase">Ο Χώρος</a>
+                    <a href="#reviews" class="text-sm font-medium tracking-wide text-white hover:text-luxury-taupe transition-colors uppercase">Αξιολογήσεις</a>
+                    <a href="#contact" class="px-8 py-3 bg-white text-luxury-navy rounded-sm text-sm font-bold tracking-widest hover:bg-luxury-taupe hover:text-white transition-all duration-300 uppercase shadow-lg">Ραντεβού</a>
+                </div>
+
+                <button class="lg:hidden text-white focus:outline-none z-50 p-2 glass-dark rounded-lg" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-luxury-navy/98 backdrop-blur-3xl hidden flex-col items-center justify-center space-y-8 z-40">
+            <a href="#about" class="text-2xl font-serif text-white hover:text-luxury-taupe transition-colors mobile-link">Η Ειδικός</a>
+            <a href="#services" class="text-2xl font-serif text-white hover:text-luxury-taupe transition-colors mobile-link">Υπηρεσίες</a>
+            <a href="#space" class="text-2xl font-serif text-white hover:text-luxury-taupe transition-colors mobile-link">Ο Χώρος</a>
+            <a href="#reviews" class="text-2xl font-serif text-white hover:text-luxury-taupe transition-colors mobile-link">Αξιολογήσεις</a>
+            <a href="#contact" class="mt-8 px-10 py-4 bg-luxury-taupe text-white rounded-sm text-lg font-bold tracking-widest mobile-link uppercase">Κλείστε Ραντεβού</a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-luxury-navy">
+        <div class="absolute inset-0 z-0">
+            <img src="https://github.com/agelmet/TENNE/blob/main/sp5.jpg?raw=true" alt="Χώρος Συνεδριών" class="w-full h-full object-cover object-center animate-slow-zoom opacity-60">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/60 to-luxury-navy/95 z-10"></div>
+
+        <div class="relative z-20 text-center max-w-5xl mx-auto mt-20 reveal">
+            <span class="inline-block py-1 px-4 border border-white/20 rounded-full text-white/80 text-xs tracking-[0.2em] uppercase mb-8 backdrop-blur-sm">
+                Ψυχολόγος & Κλινική Υπνοθεραπεύτρια
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-tight mb-8 drop-shadow-2xl font-light">
+                Γνωσιακή Συμπεριφορική <br> <span class="italic text-luxury-silver">&</span> Κλινική Υπνοθεραπεία
+            </h1>
+            <p class="text-xl md:text-2xl text-luxury-silver font-light max-w-3xl mx-auto leading-relaxed mb-12">
+                Αλλάζοντας Μοτίβα από Μέσα προς τα Έξω.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-white text-luxury-navy rounded-sm font-bold uppercase tracking-widest hover:bg-luxury-taupe hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center gap-3">
+                    Ξεκινήστε Σήμερα
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-10 py-4 border border-white/30 text-white rounded-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-all duration-300 backdrop-blur-md">
+                    Περισσότερα
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6 bg-white relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            
+            <div class="relative reveal order-2 lg:order-1">
+                <div class="relative rounded-sm overflow-hidden shadow-float w-full max-w-md mx-auto z-10 animate-float">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/herimg.jpg?raw=true" alt="Κατερίνα Τεννέ Ψυχολόγος" class="w-full h-auto object-cover">
+                </div>
+                <div class="absolute top-10 -left-10 w-full h-full border border-luxury-taupe/30 z-0 rounded-sm hidden md:block"></div>
+            </div>
+
+            <div class="reveal reveal-delay-1 order-1 lg:order-2">
+                <h2 class="text-4xl md:text-5xl font-serif text-luxury-navy mb-8 leading-tight">Η Κατερίνα Τεννέ είναι αδειούχος Ψυχολόγος.</h2>
+                <div class="space-y-6 text-lg text-luxury-slate font-light leading-relaxed">
+                    <p>
+                        (Αρ. Αδείας: 3513), Γνωσιακή Συμπεριφορική Κλινική Υπνοθεραπεύτρια και Ψυχοθεραπεύτρια, διατηρώντας το ιδιωτικό της γραφείο στο Γαλάτσι. Το ακαδημαϊκό της υπόβαθρο συνδυάζει διεθνή πρότυπα και βαθιά κοινωνική ενσυναίσθηση: ολοκλήρωσε τις σπουδές της στην Ψυχολογία στο University of Middlesex της Αγγλίας και στη συνέχεια απέκτησε Μεταπτυχιακή Εξειδίκευση στην Ειδική Αγωγή - Εκπαίδευση.
+                    </p>
+                    <p>
+                        Η κλινική της ταυτότητα είναι εξαιρετικά στοχευμένη και πρωτοποριακή. Έχει εξειδικευτεί πλήρως στην <strong>Hypnoanalysis - Analytical Hypnotherapy</strong> και στη <strong>Γνωσιακή Συμπεριφορική Υπνοθεραπεία (CBH)</strong>. Αυτός ο συνδυασμός της επιτρέπει να διαχειρίζεται με εντυπωσιακά αποτελέσματα αγχώδεις διαταραχές, κατάθλιψη, ψυχοσωματικά συμπτώματα, καθώς και εθισμούς (όπως το κάπνισμα) ή διατροφικές διαταραχές.
+                    </p>
+                    <p>
+                        Η επαγγελματική της διαδρομή χαρακτηρίζεται από τεράστια αποδοχή, υπομονή και σεβασμό στη διαφορετικότητα. Διαθέτει αξιόλογη εμπειρία παροχής ψυχολογικής υποστήριξης σε άτομα με ειδικές ανάγκες (Στέγη Υποστηριζόμενης Διαβίωσης, Πειραϊκή Ένωση Α.Μ.Ε.Α.), ενώ παρέχει ουσιαστική υποστήριξη σε παιδιά με μαθησιακές δυσκολίες και καθοδήγηση στους γονείς τους. Στο γραφείο της, δημιουργεί ένα απόλυτα ασφαλές περιβάλλον ίασης, όπου η επιστήμη συναντά την ενσυναίσθηση.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-6 bg-luxury-soft relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-luxury-taupe font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Εξειδικευμενες Προσεγγισεις</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-luxury-navy">Υπηρεσίες Ψυχοθεραπείας</h2>
+                <div class="w-16 h-0.5 bg-luxury-taupe mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                
+                <div class="service-card bg-white p-10 rounded-sm shadow-elegant border border-gray-100 reveal flex flex-col">
+                    <div class="w-14 h-14 bg-luxury-soft rounded-full flex items-center justify-center mb-8 text-luxury-navy">
+                        <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-luxury-navy mb-4">Κλινική Υπνοθεραπεία & Διαχείριση Άγχους / Κατάθλιψης (CBT)</h3>
+                    <p class="text-luxury-slate text-sm leading-relaxed mb-6 flex-grow font-light">
+                        Η Γνωσιακή Συμπεριφορική Υπνοθεραπεία είναι ένα πανίσχυρο, επιστημονικά τεκμηριωμένο και απόλυτα ασφαλές εργαλείο. Σε συνεδρίες 60 λεπτών, παρακάμπτουμε τις συνειδητές αντιστάσεις του μυαλού και εκπαιδεύουμε το υποσυνείδητο. Αποτελεσματική για άμεση ανακούφιση από κρίσεις πανικού, χρόνιο στρες, ψυχοσωματικά συμπτώματα και κατάθλιψη, φέρνοντας ταχύτερα και μόνιμα αποτελέσματα.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Κλινική Ύπνωση</span>
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Άγχος / Πανικός</span>
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Κατάθλιψη</span>
+                        <span class="text-xs text-luxury-taupe font-bold px-1 py-1">60'</span>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white p-10 rounded-sm shadow-elegant border border-gray-100 reveal reveal-delay-1 flex flex-col">
+                    <div class="w-14 h-14 bg-luxury-soft rounded-full flex items-center justify-center mb-8 text-luxury-navy">
+                        <i data-lucide="leaf" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-luxury-navy mb-4">Διακοπή Καπνίσματος & Διατροφικές Διαταραχές</h3>
+                    <p class="text-luxury-slate text-sm leading-relaxed mb-6 flex-grow font-light">
+                        Οι συνήθειες και οι εθισμοί "κατοικούν" στο υποσυνείδητο, γι' αυτό η απλή λογική δεν αρκεί. Μέσω στοχευμένης Κλινικής Υπνοθεραπείας, επαναπρογραμματίζουμε τις πεποιθήσεις που σας κρατούν εγκλωβισμένους στο κάπνισμα ή στην υπερφαγία. Σας βοηθάμε να σπάσετε τον ψυχολογικό εθισμό και να ανακτήσετε τον έλεγχο του σώματος και της υγείας σας.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Διακοπή Καπνίσματος</span>
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Διατροφικές Διαταραχές</span>
+                        <span class="text-xs text-luxury-taupe font-bold px-1 py-1">60'</span>
+                    </div>
+                </div>
+
+                <div class="service-card bg-white p-10 rounded-sm shadow-elegant border border-gray-100 reveal reveal-delay-2 flex flex-col">
+                    <div class="w-14 h-14 bg-luxury-soft rounded-full flex items-center justify-center mb-8 text-luxury-navy">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-luxury-navy mb-4">Συμβουλευτική Γονέων, Παιδιών & Ειδική Αγωγή</h3>
+                    <p class="text-luxury-slate text-sm leading-relaxed mb-6 flex-grow font-light">
+                        Αντλώντας από τη βαθιά εξειδίκευση (MSc στην Ειδική Αγωγή) και την εμπειρία με ΑΜΕΑ, παρέχεται εξειδικευμένη υποστήριξη σε παιδιά με μαθησιακές δυσκολίες. Παράλληλα, μέσα από τη Συμβουλευτική Γονέων—και την επιμόρφωση στη «Διαχείριση Χωρισμού - Διαζυγίου Γονέων»—καθοδηγείται η οικογένεια ώστε να επικοινωνεί ουσιαστικά και να διαχειρίζεται ομαλά τις μεταβάσεις.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Γονείς & Παιδιά</span>
+                        <span class="text-xs bg-luxury-soft text-luxury-slate px-3 py-1 rounded-sm">Ειδική Αγωγή</span>
+                        <span class="text-xs text-luxury-taupe font-bold px-1 py-1">60'</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="space" class="py-32 px-6 bg-luxury-navy text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-luxury-taupe font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Περιβαλλον Ιασης</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white">Ο Χώρος Μας</h2>
+                <div class="w-16 h-0.5 bg-luxury-taupe mx-auto mt-8 mb-8"></div>
+                <p class="text-luxury-silver font-light max-w-2xl mx-auto">Ένα περιβάλλον σχεδιασμένο με γνώμονα την απόλυτη ασφάλεια, την ηρεμία και την ιδιωτικότητα.</p>
+            </div>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+                <div class="img-masonry group relative cursor-zoom-in reveal" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/sp5.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/sp5.jpg?raw=true" alt="Χώρος Συνεδριών" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="img-masonry group relative cursor-zoom-in reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/sp6.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/sp6.jpg?raw=true" alt="Χώρος Συνεδριών" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="img-masonry group relative cursor-zoom-in reveal reveal-delay-2" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/spac32.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/spac32.jpg?raw=true" alt="Γραφείο" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="img-masonry group relative cursor-zoom-in reveal" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/spacw2.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/spacw2.jpg?raw=true" alt="Λεπτομέρεια Χώρου" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="img-masonry group relative cursor-zoom-in reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/spc24.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/spc24.jpg?raw=true" alt="Αναμονή" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="img-masonry group relative cursor-zoom-in reveal reveal-delay-2" onclick="openLightbox('https://github.com/agelmet/TENNE/blob/main/logospace.jpg?raw=true')">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/logospace.jpg?raw=true" alt="Λογότυπο Χώρου" class="w-full h-auto rounded-sm transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-sm">
+                        <i data-lucide="maximize-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-luxury-navy/95 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Προβολή Εικόνας" class="max-w-[95vw] max-h-[95vh] object-contain shadow-2xl cursor-default rounded-sm" onclick="event.stopPropagation()">
+    </div>
+
+    <section id="reviews" class="py-32 bg-white overflow-hidden border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
+            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" alt="Doctoranytime Logo" class="h-10 mx-auto mb-8 object-contain">
+            <h2 class="text-4xl font-serif text-luxury-navy mb-4">Αληθινές Εμπειρίες</h2>
+            <p class="text-luxury-slate font-light">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
+        </div>
+
+        <div class="w-full overflow-hidden relative pb-10">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+            
+            <div class="marquee-container animate-marquee">
+                <div class="flex space-x-6 px-3" id="review-cards">
+                    <script>
+                        const reviews = [
+                            { score: "10.0", name: "Μαρία", date: "24 Σεπτεμβρίου 2025", reviews: "5", text: "Η Κατερίνα με καταλαβαίνει σε βάθος και καταφέρνει να βάζει σε λόγια αυτά που εγώ δυσκολεύομαι να εκφράσω. Με βοηθά να δω τον εαυτό μου με νέα ματιά... Κάθε φορά που φεύγω αισθάνομαι πιο ήρεμη." },
+                            { score: "10.0", name: "Elena", date: "08 Σεπτεμβρίου 2025", reviews: "4", text: "Η Κατερίνα με αγκάλιασε νοητά χωρίς να αγγίξει τις πληγές μου καθώς ήταν η πρώτη μας συνεδρία. Έφυγα με μια αίσθηση ελπίδας ότι ξεκινάμε ένα ταξίδι προς το φως." },
+                            { score: "10.0", name: "Αναστασία", date: "04 Ιουλίου 2025", reviews: "2", text: "Έδειξε ενδιαφέρον και κατανόηση στο πρόβλημα μου, αισθάνθηκα ασφαλής και πως όλα βελτιώνονται . Εξαιρετική ειδικός,την συστήνω ανεπιφύλακτα." },
+                            { score: "10.0", name: "ΣΤΑΥΡΟΥΛΑ", date: "23 Ιουνίου 2025", reviews: "4", text: "Έμεινα πάρα πολύ ευχαριστημένη από την συνεδρία μου με την κ.Κατερινα. Μου έσπευσε την εμπιστοσύνη και εννοείτε ότι θα συνεχίσω τις συνεδρίες μαζί της." },
+                            { score: "10.0", name: "ΑΣΗΜΙΝΑ", date: "21 Ιουνίου 2025", reviews: "2", text: "Από το πρώτο ραντεβού ένιωσα ότι βρήκα αυτό που ήθελα. Με διάβασε αμέσως σαν προσωπικότητα και ήταν to the point. Αναμένω να συνεχίσει το ταξίδι." },
+                            { score: "10.0", name: "Μαρία", date: "03 Ιουνίου 2025", reviews: "2", text: "Είναι απόλυτα καταρτισμένη επιστήμονας, εμπνέει από την αρχή εμπιστοσύνη... Εκτός από εξαίρετη επιστήμονας είναι πάνω από όλα ανθρώπινη." },
+                            { score: "10.0", name: "Ελένη", date: "23 Ιουλίου 2024", reviews: "1", text: "Με βοήθησέ πάρα πολύ από την πρώτη κιόλας συνεδρία!" },
+                            { score: "10.0", name: "ΤΑΝΙΑ", date: "23 Απριλίου 2024", reviews: "1", text: "Από το πρώτο ραντεβού κατάλαβα πως η κα Τεννέ ξεχωρίζει όχι μόνο ως ψυχολόγος αλλά και ως άνθρωπος. Με έκανε να νιώθω άνετα και οικία." },
+                            { score: "9.8", name: "ΣΤΑΥΡΟΥΛΑ", date: "09 Ιανουαρίου 2024", reviews: "4", text: "Ένας αξιόλογος άνθρωπος που από την πρώτη επίσκεψη μου ένιωσα πώς η θύελλα που έχω μέσα μου θα καταλαγιάσει με την βοήθεια της κ.Κατερίνας." },
+                            { score: "10.0", name: "κατερινα", date: "21 Νοεμβρίου 2023", reviews: "21", text: "Αισθάνθηκα τόσο οικεία που πέρασε μια ώρα χωρίς να το καταλάβω... φευγοντας από το ιατρείο της αισθάνθηκα μια γαλήνη." },
+                            { score: "10.0", name: "ΑΘΑΝΑΣΙΑ", date: "01 Νοεμβρίου 2023", reviews: "1", text: "Με έκανε να νιώσω άνετα και μου ενέπνευσε εμπιστοσύνη. Εξαιρετική!!! Σίγουρα η καλύτερη επιλογή που έχω κάνει." },
+                            { score: "10.0", name: "ΕΡΗ", date: "21 Σεπτεμβρίου 2023", reviews: "6", text: "Πολύ ευχάριστη και προσιτή επικοινωνία" },
+                            { score: "10.0", name: "ΝΑΤΙΑ", date: "09 Σεπτεμβρίου 2023", reviews: "1", text: "Είναι υπέροχος άνθρωπος και εξαιρετική επιστήμονα, από την πρώτη μας ραντεβού κέρδισε την εμπιστοσύνη μου." },
+                            { score: "10.0", name: "Ευη", date: "04 Σεπτεμβρίου 2023", reviews: "3", text: "Φεύγοντας από εκεί ένιωσα σαν να άφησα ένα τεράστιο βάρος πίσω μου! Εξαιρετική, με έκανε να νιώσω άνετα." },
+                            { score: "10.0", name: "ΟΛΥΜΠΙΑ", date: "01 Σεπτεμβρίου 2023", reviews: "1", text: "Εξαιρετική εππαγελματίας. Κατανόησε το πρόβλημα μου και με βοήθησε να το αντιμετωπίσω." },
+                            { score: "10.0", name: "Katerina", date: "23 Ιουλίου 2023", reviews: "4", text: "Κέρδισε την εμπιστοσύνη μου από τα πρώτα λεπτά της συνεδρίας! Η κλινική ύπνωση είναι μια μοναδική εμπειρία." },
+                            { score: "10.0", name: "Αναστασία", date: "17 Ιουλίου 2023", reviews: "2", text: "Ένιωσα πολύ καλύτερα φεύγοντας από το γραφείο της... Χωρίς να καταλάβω πώς πέρασε η ώρα." },
+                            { score: "10.0", name: "Γεώργιος", date: "16 Μαρτίου 2023", reviews: "1", text: "Ήταν η πρώτη μου απλή συνεδρία και ένοιωσα ξεκλειδωμένος" },
+                            { score: "10.0", name: "ΕΥΑΓΓΕΛΙΑ", date: "02 Μαρτίου 2023", reviews: "2", text: "Πήγα διστακτικά, έφυγα περιμένοντας το επόμενο ραντεβού." },
+                            { score: "10.0", name: "ΡΑΦΑΕΛΑ", date: "02 Μαρτίου 2023", reviews: "1", text: "Εξαιρετική επαγγελματίας, ένιωσα πολύ οικεία και μου ενέπνευσε εμπιστοσύνη!" }
+                        ];
+
+                        const createCard = (r) => `
+                            <div class="w-80 bg-luxury-soft p-8 rounded-sm shadow-sm border border-gray-100 flex flex-col shrink-0">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div>
+                                        <div class="flex items-center gap-1 text-luxury-slate mb-2">
+                                            <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                                        </div>
+                                        <span class="font-bold text-luxury-navy text-lg">${r.score} / 10</span>
+                                    </div>
+                                    <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-6 object-contain grayscale opacity-50" alt="Doctoranytime">
+                                </div>
+                                <p class="text-luxury-slate font-serif italic text-lg mb-6 flex-grow">"${r.text}"</p>
+                                <div class="border-t border-gray-200 pt-4">
+                                    <p class="text-sm font-bold text-luxury-navy uppercase tracking-widest">${r.name}</p>
+                                    <p class="text-xs text-luxury-taupe mt-1">${r.date} • ${r.reviews} αξιολογήσεις</p>
+                                </div>
+                            </div>
+                        `;
+
+                        // Duplicate array to make scrolling seamless
+                        const allReviews = [...reviews, ...reviews].map(createCard).join('');
+                        document.write(allReviews);
+                    </script>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 relative z-20">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/tenne-katerina" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-luxury-navy text-white rounded-sm text-xs font-bold tracking-[0.2em] uppercase hover:bg-luxury-taupe transition-colors shadow-elegant">
+                    Περισσοτερες Αξιολογησεις
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-luxury-navy text-white pt-24 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-luxury-taupe/30 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+                
+                <div class="lg:col-span-5 reveal">
+                    <img src="https://github.com/agelmet/TENNE/blob/main/olog.jpg?raw=true" alt="Κατερίνα Τεννέ Logo" class="h-24 w-auto object-contain mb-8 rounded-lg bg-white/5 p-2">
+                    <p class="text-luxury-silver font-light max-w-sm mb-8 leading-relaxed">
+                        Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον απόλυτης αποδοχής.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.doctoranytime.gr/d/Psychologos/tenne-katerina" target="_blank" class="w-12 h-12 rounded-sm bg-white/10 flex items-center justify-center hover:bg-luxury-taupe transition-colors text-white" aria-label="DoctorAnytime">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </a>
+                        <a href="https://share.google/1JDKr2aWrRtPhSJkN" target="_blank" class="w-12 h-12 rounded-sm bg-white/10 flex items-center justify-center hover:bg-luxury-taupe transition-colors text-white" aria-label="Google">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                        <a href="https://www.instagram.com/psychologos_tenne/" target="_blank" class="w-12 h-12 rounded-sm bg-white/10 flex items-center justify-center hover:bg-luxury-taupe transition-colors text-white" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Katerinatennepsychologist/" target="_blank" class="w-12 h-12 rounded-sm bg-white/10 flex items-center justify-center hover:bg-luxury-taupe transition-colors text-white" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 reveal reveal-delay-1">
+                    <h4 class="text-xs font-bold text-luxury-taupe mb-8 uppercase tracking-[0.2em]">Επικοινωνια</h4>
+                    <ul class="space-y-6 text-luxury-silver font-light">
+                        <li class="flex items-start gap-4 group">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-luxury-taupe mt-1 group-hover:text-white transition-colors"></i>
+                            <span>Ι. Φωκά 40,<br>Γαλάτσι, Αττική</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <i data-lucide="phone" class="w-5 h-5 text-luxury-taupe group-hover:text-white transition-colors"></i>
+                            <a href="tel:+306973301787" class="hover:text-white transition-colors">697 330 1787</a>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <i data-lucide="mail" class="w-5 h-5 text-luxury-taupe group-hover:text-white transition-colors"></i>
+                            <a href="mailto:katerina_tenne@yahoo.gr" class="hover:text-white transition-colors">katerina_tenne@yahoo.gr</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3 reveal reveal-delay-2">
+                    <h4 class="text-xs font-bold text-luxury-taupe mb-8 uppercase tracking-[0.2em]">Ωραριο</h4>
+                    <ul class="space-y-6 text-luxury-silver font-light">
+                        <li class="flex items-start gap-4 group">
+                            <i data-lucide="clock" class="w-5 h-5 text-luxury-taupe mt-1 group-hover:text-white transition-colors"></i>
+                            <div>
+                                <span class="block mb-1">Δευτέρα – Σάββατο</span>
+                                <span class="text-sm text-luxury-taupe font-medium">Κατόπιν Ραντεβού</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
+                <p class="text-luxury-silver/50 text-xs tracking-wider">© 2026 Κατερίνα Τεννέ. All rights reserved.</p>
+                <p class="text-luxury-silver/50 text-xs tracking-wider">
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-white hover:text-luxury-taupe transition-colors">Advon Media</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const navInner = document.getElementById('nav-inner');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navInner.classList.add('glass-dark', 'shadow-2xl');
+                navbar.classList.remove('py-6');
+                navbar.classList.add('py-3');
+            } else {
+                navInner.classList.remove('glass-dark', 'shadow-2xl');
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-3');
+            }
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 500);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
