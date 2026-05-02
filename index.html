@@ -44,7 +44,7 @@
                     },
                     animation: {
                         'blob': 'blob 12s infinite',
-                        'marquee': 'marquee 150s linear infinite', /* Slower Marquee */
+                        'marquee': 'marquee 150s linear infinite',
                         'float-subtle': 'floatSubtle 6s ease-in-out infinite',
                     },
                     keyframes: {
@@ -102,7 +102,6 @@
         #lightbox img { transform: scale(0.95); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
         #lightbox.active img { transform: scale(1); }
 
-        /* Wow Factor Service Cards */
         .service-card-wow {
             background: #ffffff;
             border: 1px solid rgba(138, 154, 134, 0.2);
@@ -141,7 +140,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* FAQ Accordion Transition */
         .faq-content {
             transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
             opacity: 0;
@@ -153,7 +151,6 @@
             transform: rotate(45deg);
         }
         
-        /* Custom Button Hover Fill */
         .btn-fill {
             position: relative;
             overflow: hidden;
@@ -174,7 +171,6 @@
             color: #f9f8f4;
             border-color: #1a2f24;
         }
-    </button>
     </style>
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -202,7 +198,12 @@
             </div>
         </div>
         
-        <div id="mobile-menu" class="fixed inset-0 bg-earth-light/98 backdrop-blur-3xl hidden flex-col items-center justify-center space-y-8 z-40">
+        <div id="mobile-menu" class="fixed inset-0 bg-earth-light/98 backdrop-blur-3xl hidden flex-col items-center justify-center space-y-8 z-[60]">
+            <!-- Added Close Button for Mobile Menu -->
+            <button id="mobile-close-btn" class="absolute top-8 right-6 p-3 text-earth-deep bg-white/50 backdrop-blur-md rounded-full border border-earth-deep/10 hover:text-earth-clay hover:scale-110 transition-all focus:outline-none shadow-sm z-[70]">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            
             <a href="#about" class="text-3xl font-serif text-earth-deep hover:text-earth-clay transition-colors mobile-link">Η Ειδικός</a>
             <a href="#services" class="text-3xl font-serif text-earth-deep hover:text-earth-clay transition-colors mobile-link">Υπηρεσίες</a>
             <a href="#space" class="text-3xl font-serif text-earth-deep hover:text-earth-clay transition-colors mobile-link">Ο Χώρος</a>
@@ -563,7 +564,6 @@
                             </div>
                         `;
 
-                        // Add the array twice to make the endless loop work correctly
                         const allReviewsHTML = [...reviews, ...reviews].map(createCard).join('');
                         document.write(allReviewsHTML);
                     </script>
@@ -655,19 +655,24 @@
     </div>
 
     <script>
-        // 1. Initialize Icons
         lucide.createIcons();
 
-        // 2. Mobile Menu Logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
         const navInner = document.getElementById('nav-inner');
 
         mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-            document.body.classList.toggle('overflow-hidden');
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        });
+
+        mobileCloseBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
         });
 
         mobileLinks.forEach(link => {
@@ -678,7 +683,6 @@
             });
         });
 
-        // 3. Navbar Scrolling Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -688,7 +692,6 @@
             }
         });
 
-        // 4. Scroll Reveal Animations
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -708,18 +711,15 @@
             observer.observe(el);
         });
 
-        // 5. FAQ Accordion Logic
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
-                // Close all other items
                 document.querySelectorAll('.faq-item').forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.faq-content').style.maxHeight = null;
                 });
 
-                // Toggle current item
                 if (!isActive) {
                     item.classList.add('active');
                     const content = item.querySelector('.faq-content');
@@ -728,7 +728,6 @@
             });
         });
 
-        // 6. Lightbox Gallery Logic
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
